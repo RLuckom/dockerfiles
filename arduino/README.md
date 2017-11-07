@@ -1,4 +1,6 @@
-### Arduino IDE configured for arduino and ESP8266 development
+### Arduino IDE 1.8.5 configured for arduino and ESP8266 development
+Built container: raphaelluckom/arduino:latest
+
 Tested to work on an ubuntu 16.04 host running docker 17.09.0-ce
 
 To start the IDE UI you need to share your X11 server and $DISPLAY
@@ -17,6 +19,18 @@ board. You need to have the board plugged in before starting the container.
 Start container command:
      docker run -e DISPLAY=unix$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix \
      --name arduino --device=/dev/ttyUSB0 raphaelluckom/arduino
+
+After starting the container, you need to update the arduino IDE for 
+ESP8266 development manually, then commit the container to a new image.
+This is necessary because the instructions for [installing the ESP8266 tools using git](https://github.com/esp8266/Arduino#using-git-version)
+don't work for the most recent version of the arduino IDE. Use the instructions
+for [installing the ESP8266 tools with Board Manager](https://github.com/esp8266/Arduino#installing-with-boards-manager),
+then recommit the container with:
+
+     docker commit arduino arduino
+
+From then on, when you start a new container based on the `arduino` image,
+it should already have the tools installed.
 
 Debugging the container
 
