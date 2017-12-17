@@ -42,10 +42,10 @@ LABEL maintainer "raphael luckom <raphaelluckom@gmail.com>"
 RUN apt-get update \
     && apt-get install -y \
     apt-utils xz-utils libx11-6 libxext6 libxrender1 libxtst6 libxi6 openjdk-8-jdk \
-    libcanberra-gtk-module usbutils
+    libcanberra-gtk-module usbutils ca-certificates curl
 
 # create nonprivileged arduino user
-RUN groupadd -r arduino && useradd -r -g arduino arduino\
+RUN groupadd -g 1000 -r arduino && useradd -r -g arduino -u 1000 arduino\
     && mkdir -p /home/arduino
 
 # add arduino user to the group that gets access to USB peripherals
