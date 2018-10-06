@@ -1,0 +1,2 @@
+#!/bin/bash
+docker run --net=host --rm -ti --expose 1313 -p 1313:1313 -v $(pwd):/input --user=$UID hugo $@

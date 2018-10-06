@@ -1,0 +1,2 @@
+#!/bin/bash
+docker run --rm -ti --user=$UID -v $HOME/.aws:/.aws -v $(pwd):/input aws $@

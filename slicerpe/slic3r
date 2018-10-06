@@ -1,0 +1,3 @@
+#!/bin/bash
+xhost +local:docker
+docker run --user=$UID --rm -e DISPLAY=unix$DISPLAY -v $HOME/.Slic3rPE:/.Slic3rPE -v /tmp/.X11-unix:/tmp/.X11-unix -v $(pwd):/input slic3r

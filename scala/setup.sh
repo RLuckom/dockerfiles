@@ -8,7 +8,7 @@ mkdir -p ~/configs/scala-build/sbt-global-base
 mkdir -p ~/configs/scala-build/sbt-ivy-home
 mkdir -p ~/configs/scala-build/sbt-boot-directory
 
-mkdir ~/.bin
+mkdir -p ~/.bin
 
 ln -s $(pwd)/amm ~/.bin/amm
 ln -s $(pwd)/sbt ~/.bin/sbt
