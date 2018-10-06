@@ -1,0 +1,8 @@
+#!/bin/bash
+SBT_OPTS="-Dsbt.global.base=/scala-build/sbt-global-base -Dsbt.ivy.home=/scala-build/sbt-ivy-home -Dsbt.boot.directory=/scala-build/sbt-boot-directory $SBT_OPTS"
+docker run --user=$UID \
+  --rm -ti --network="host" \
+  -v $(pwd):/workspace \
+  -v $HOME/configs/scala-build:/scala-build \
+  -e SBT_OPTS="$SBT_OPTS" \
+  -e JAVA_OPTS sbt $@

@@ -1,0 +1,13 @@
+FROM ubuntu:xenial
+
+RUN apt-get update && \
+    apt-get install -y openjdk-8-jdk curl
+
+RUN (echo "#!/usr/bin/env sh" && curl -L https://github.com/lihaoyi/Ammonite/releases/download/1.2.1/2.12-1.2.1) > /usr/local/bin/amm && \
+     chmod +x /usr/local/bin/amm
+
+ENV HOME="/workspace"
+
+WORKDIR /workspace
+
+ENTRYPOINT ["amm"]
