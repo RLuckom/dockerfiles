@@ -10,4 +10,6 @@ RUN echo "deb https://dl.bintray.com/sbt/debian /" | tee -a /etc/apt/sources.lis
 
 WORKDIR /workspace
 
+USER nobody:nogroup
+
 ENTRYPOINT ["sbt"]

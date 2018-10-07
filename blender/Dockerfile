@@ -5,4 +5,6 @@ RUN apt-get update && \
     curl -L -o blender.tar.bz2 https://mirror.clarkson.edu/blender/release/Blender2.79/blender-2.79b-linux-glibc219-x86_64.tar.bz2 && \
     tar xjvf blender.tar.bz2
 
+USER nobody:nogroup
+
 CMD ["/blender-2.79b-linux-glibc219-x86_64/blender"]

@@ -10,5 +10,5 @@ mkdir -p ~/configs/scala-build/sbt-boot-directory
 
 mkdir -p ~/.bin
 
-ln -s $(pwd)/amm ~/.bin/amm
-ln -s $(pwd)/sbt ~/.bin/sbt
+ln -sf $(pwd)/amm ~/.bin/amm
+ln -sf $(pwd)/sbt ~/.bin/sbt

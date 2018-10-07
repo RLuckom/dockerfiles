@@ -13,8 +13,8 @@ The `setup.sh` script in each directory is the canonical source of installation 
 ### Notes on running the containers
 
 The scripts to run the containers mount the tool's configuration directory
-(a tool-specific lcation within `$HOME/configs`) and the working directory
-into the container. This is sufficient for many tasks, but it also imposes
+(a tool-specific lcation within `$HOME` or `$HOME/configs`) and the working
+directory into the container. This is sufficient for many tasks, but it also imposes
 some significant restrictions:
 
  1. You can't execute a script that isn't in a subdirectory of the current directory (e.g. `amm ../otherdir/script.sc` won't work, because `otherdir` isn't mounted in the container)

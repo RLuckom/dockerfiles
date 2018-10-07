@@ -6,4 +6,6 @@ RUN apt-get update && \
     tar xjf slic3r.tar.bz2 && \
     chmod -R 777 /Slic3rPE-1.40.1+linux64-full-201807051330
 
+USER nobody:nogroup
+
 CMD ["/Slic3rPE-1.40.1+linux64-full-201807051330/slic3r", "--gui"]

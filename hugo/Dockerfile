@@ -6,4 +6,6 @@ RUN apt-get update && \
 
 WORKDIR /input
 
+USER nobody:nogroup
+
 ENTRYPOINT ["/hugo"]

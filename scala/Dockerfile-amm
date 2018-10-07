@@ -10,4 +10,6 @@ ENV HOME="/workspace"
 
 WORKDIR /workspace
 
+USER nobody:nogroup
+
 ENTRYPOINT ["amm"]

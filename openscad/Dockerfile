@@ -5,4 +5,7 @@ RUN apt-get update && \
     apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y openscad
+
+USER nobody:nogroup
+
 CMD ["openscad"]

@@ -4,4 +4,7 @@ RUN apt-get update && apt-get install -y software-properties-common && \
     echo deb http://repository.spotify.com stable non-free | tee /etc/apt/sources.list.d/spotify.list && \
     apt-get update && \
     apt-get install -y spotify-client alsa-utils libgl1-mesa-dri libgl1-mesa-glx xdg-utils
+
+USER nobody:nogroup
+
 CMD ["spotify"]
