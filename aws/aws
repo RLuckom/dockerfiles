@@ -1,2 +1,2 @@
 #!/bin/bash
-docker run --rm -ti --user=$UID -v $HOME/.aws:/.aws -v $(pwd):/input aws $@
+docker run --rm -ti --user=$UID:nogroup -v $HOME/.aws:/.aws -v $(pwd):/input aws $@

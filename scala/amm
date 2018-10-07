@@ -1,5 +1,5 @@
 #!/bin/bash
-docker run --user=$UID --rm -ti --network="host" \
+docker run --user=$UID:nogroup --rm -ti --network="host" \
   -v $(pwd):/workspace -v $HOME/configs/:/configs \
   -e "JAVA_OPTS=-Duser.home=/configs $JAVA_OPTS" \
   amm --no-remote-logging $@

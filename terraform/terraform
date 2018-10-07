@@ -1,2 +1,2 @@
 #!/bin/bash
-docker run --rm -ti --user=$UID -v $HOME/.aws:/.aws -v $HOME/.gcp:/.gcp -v $(pwd):/input --name terraform terraform $@
+docker run --rm -ti --user=$UID:nogroup -v $HOME/.aws:/.aws -v $HOME/.gcp:/.gcp -v $(pwd):/input --name terraform terraform $@
