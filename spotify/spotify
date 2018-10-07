@@ -1,0 +1,11 @@
+#!/bin/bash
+xhost +local:docker
+docker run --user=$UID:nogroup -ti --rm \
+  --device /dev/snd:/dev/snd \
+  -e DISPLAY=unix$DISPLAY \
+  -e HOME="/spotify" \
+  -v /etc/localtime:/etc/localtime:ro \
+  -v /tmp/.X11-unix:/tmp/.X11-unix \
+  -v $HOME/configs/spotify/config:/spotify/ \
+  --group-add audio \
+  spotify
