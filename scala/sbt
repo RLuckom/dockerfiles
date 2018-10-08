@@ -5,4 +5,5 @@ docker run --user=$UID:nogroup \
   -v $(pwd):/workspace \
   -v $HOME/configs/scala-build:/scala-build \
   -e SBT_OPTS="$SBT_OPTS" \
+  -e HOME="/scala-build" \
   -e JAVA_OPTS sbt $@
