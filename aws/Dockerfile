@@ -1,9 +1,8 @@
-FROM ubuntu:bionic
+FROM ubuntu:focal
+ENV DEBIAN_FRONTEND="noninteractive"
 RUN apt-get update -y && apt-get upgrade -y
-RUN apt-get install -y groff python curl
+RUN apt-get install -y groff python3 python3-pip curl
 
-RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-RUN python /get-pip.py
 RUN pip install awscli
 
 WORKDIR /input
